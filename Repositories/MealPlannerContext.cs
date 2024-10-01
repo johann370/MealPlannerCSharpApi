@@ -8,5 +8,6 @@ namespace MealPlannerCSharpApi.Repositories
         public MealPlannerContext(DbContextOptions<MealPlannerContext> options) : base(options) { }
 
         public DbSet<Recipe> Recipes { get; set; } = null!;
+        public DbSet<Meal> Meals { get; set; }
     }
 }
