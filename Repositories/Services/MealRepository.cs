@@ -51,7 +51,7 @@ public class MealRepository : IMealRepository
 
     public async void RemoveRecipeFromMeal(long mealId, long recipeId)
     {
-        var meal = await _context.Meals.FindAsync(mealId);
+        var meal = await _context.Meals.Include(m => m.Recipes).FirstOrDefaultAsync(m => m.Id == mealId);
         var recipe = await _context.Recipes.FindAsync(recipeId);
 
         if(meal == null || recipe == null)

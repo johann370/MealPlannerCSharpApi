@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<MealPlannerContext>(options => options.UseInMemoryDatabase("mealplanner"));
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 builder.Services.AddScoped<IMealRepository, MealRepository>();
+builder.Services.AddScoped<IPlannerRepository, PlannerRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
